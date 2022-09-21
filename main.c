@@ -120,8 +120,41 @@ void name(){
     free(lastname);
 }
 
+int* quicksort(int numbers[], int size){
+    int temp;
+    int smallerIndex = -1;
+    int pivot = numbers[size-1];
+    for(int index = 0; index < size; index++){
+        if (numbers[index] < pivot){
+            smallerIndex++;
+            temp = numbers[smallerIndex];
+            numbers[index-1] = numbers[index];
+
+        }
+    }
+}
+
+void quicksortRun(){
+    int arraySize = 8;
+    int array[] = {1,2,4,21,5,7,12, 8, 9};
+    int *sortedArray = quicksort(array, arraySize);
+    for(int i = 0; i < arraySize; i++)
+    printf(" %d", sortedArray[i]);
+}
+
+void randomNumber(){
+    printf("%d\n", rand() % 15+10);
+}
+
+void tebakAngka(){
+    printf("I'm thinking of a number between 1-10 what is it?\n");
+    int guess, number = rand() % 10 + 1;
+    scanf(" %d", guess);
+
+
+}
+
 int main() {
-    input_output();
     return 0;
 }
 
